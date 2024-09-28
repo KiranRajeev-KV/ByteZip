@@ -1,0 +1,3 @@
+Test123!@# Compression algorithms must handle all kinds of characters.
+Numbers: 1234567890
+Symbols: !@#$%^&*()_+[]{}|;:',.<>?/`~

@@ -1,0 +1,4 @@
+The quick brown fox jumps over the lazy dog.
+The quick brown fox jumps over the lazy dog.
+This sentence will test the compression algorithm's ability to handle both short and long repetitive text patterns effectively.
+The quick brown fox jumps over the lazy dog.
