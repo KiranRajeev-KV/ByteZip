@@ -1,6 +1,0 @@
-
-Computers are powerful devices that process data and perform complex calculations at incredible speeds.
-They come in various forms, from desktop PCs and laptops to powerful servers and supercomputers.
-\ Each type serves different purposes, such as personal productivity, entertainment, or scientific research. 
-At their core, computers rely on a combination of hardware, like processors and memory, and software to execute tasks efficiently. 
-The evolution of computers has revolutionized many aspects of life, making communication, data analysis, and automation more accessible and advanced.
