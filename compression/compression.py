@@ -1,3 +1,4 @@
+import json
 import os
 import heapq
 
@@ -13,6 +14,14 @@ class HeapNode():
 
     def __eq__(self, other):
         return self.freq == other.freq
+    
+    def to_dict(self):
+        return {
+            'char': self.char,
+            'freq': self.freq,
+            'left': self.left.to_dict() if self.left else None,
+            'right': self.right.to_dict() if self.right else None,
+        }
 
 class Compress():
     def __init__(self,FilePath):
@@ -76,9 +85,13 @@ class Compress():
     
     # create unique code for each characters
     def MakeCode(self):
-        root=heapq.heappop(self.Heap)
-        CurrentCode=""
-        self.Traversal(root,CurrentCode)    
+        if not self.Heap:
+            raise ValueError("Heap is empty, cannot generate Huffman codes.")
+        
+        root = heapq.heappop(self.Heap)
+        self.save_trees(root)
+        CurrentCode = ""
+        self.Traversal(root, CurrentCode)  
     
     def CreateEncrytpedText(self,text):
         EncodedString=""
@@ -109,18 +122,19 @@ class Compress():
     def Compression(self):
         FileLines=self.ReadFiles()
         Frequency=self.Frequency(FileLines)
-
+        
         self.CreateMinHeap(Frequency)
         self.CombineTwoNode()
         self.MakeCode()
-
         EncodedString=self.CreateEncrytpedText(FileLines)
         PaddedEncodedString=self.AddPadingText(EncodedString)
         ByteEncodedString=self.ConvertToByte(PaddedEncodedString)
         
         self.WriteFiles(ByteEncodedString)
 
+    def save_trees(self, root, directory='huffman_trees'):
+            if not os.path.exists(directory):
+                os.makedirs(directory)
 
-
-read = Compress("ByteZip\\tests\\mixed_content_sample.txt")
-read.Compression()
+            with open(os.path.join(directory, 'huffman_tree.json'), 'w') as f:
+                json.dump(root.to_dict(), f)
