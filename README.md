@@ -34,10 +34,52 @@ ByteZip is a tool designed to compress and decompress files efficiently. This pr
 4. Save the decoded data into the output file.
 
 ## Installation
-To be added later. Please ensure you have Python installed, as ByteZip is built using Python.
 
+To use ByteZip, follow these steps:
+
+### 1. Ensure Python is Installed
+Ensure that you have Python 3.x or later installed on your system. You can download Python from [python.org](https://www.python.org/downloads/).
+
+### 2. Clone the Repository
+You can clone the repository to your local machine using Git. Open a terminal (Command Prompt, PowerShell, or terminal of your choice) and run:
+```bash
+git clone https://github.com/yourusername/ByteZip.git
+```
+Alternatively, download the ZIP of the project from GitHub and extract it.
+
+### 3.  Install Required Dependencies
+If you're using Python 3, tkinter (for the graphical interface) is typically included by default. If you don’t have it installed, you can install it manually:
+
+- For Windows:
+Tkinter should be included by default. If not, you may need to install it via your Python installation options.
+- For Mac/Linux: You can install tkinter using the following:
+```bash
+sudo apt-get install python3-tk
+```
+### 4. Run the Application
+Once the setup is complete, run the application with the following command:
+```bash
+python ui.py
+```
 ## Usage
-To be added later. Once installed, you can use the command line to compress or decompress files. Example commands will be provided.
+Once ByteZip is installed and running, you can use the graphical interface to compress and decompress text files.
+
+### Compressing a File:
+1. Launch the application by running ui.py.
+2. Click the "Compress File" button.
+3. Select a text file (.txt) from your computer.
+4. The application will compress the file using Huffman coding and save the compressed file with a .bin extension.
+5. A success message will appear once the compression is complete.
+
+### Decompressing a File:
+1. Launch the application by running ui.py.
+2. Click the "Decompress File" button.
+3. Select a compressed file (.bin) to decompress.
+4. The application will restore the original text file and save it as a .txt file with the suffix _decompressed.
+5. A success message will appear once the decompression is complete.
+
+### Error Handling:
+If an error occurs during the compression or decompression process, an error message will pop up to help you troubleshoot the issue.
 
 ## Contact
 For any questions or suggestions, please contact us at [vijaysb2006@gmail.com](mailto:vijaysb2006@gmail.com). You can also reach out to us on GitHub at [[Kiran Rajeev](https://github.com/KiranRajeev-KV)] and [[Vijay S B](https://github.com/vijaysb0613)].
